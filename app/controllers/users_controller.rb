@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate,:except => [:new,:create, :destroy]
   def new
     @user = User.new
   end
