@@ -8,8 +8,8 @@ module SessionsHelper
   # Remembers a user in a persistent session.
   def remember(user)
     user.remember
-    cookies.signed[:user_id] = { value: user.id, expires: 2.minutes.from_now.utc}
-    cookies[:remember_token] = { value: user.remember_token, expires: 2.minutes.from_now.utc }
+    cookies.signed[:user_id] = { value: user.id, expires: 2.weeks.from_now.utc}
+    cookies[:remember_token] = { value: user.remember_token, expires: 2.weeks.from_now.utc }
   end
 
   # Forgets a persistent session.
